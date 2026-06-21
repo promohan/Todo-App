@@ -1,8 +1,5 @@
 import { useState } from "react";
-
 const Form = () => {
-
-
   const [value, setValue] = useState("");//madhav
   const [todoList, setTodoList] = useState([])  //[ram,shayam,madhav]
 
@@ -10,18 +7,14 @@ const Form = () => {
     e.preventDefault();
 
     if (!todoList.includes(value)) {
-
       const finalList = [...todoList, value]//ram+shayam+madhav
       setTodoList(finalList)
-
       setValue("")
-
       // console.log(todoList)
     } else {
       alert("ToDo Name Already Exists....")
     }
   }
-
   const list = todoList.map((value, index) => {
     return (
       <ToDoListItems   //parameters or props 
@@ -33,8 +26,6 @@ const Form = () => {
       />
     )
   })
-
-
   return (
     <div>
       <form onSubmit={hello}>
@@ -54,30 +45,22 @@ const Form = () => {
         </ul>
       </div>
     </div>
-
-
   )
 }
 
 export default Form
 
-
-
-
 function ToDoListItems({ value, indexNo, todoList, setTodoList }) {
   const [status, setStatus] = useState(false); //ager status true hoto to className="complete-task" this one else empty class!!!
-
 
   // new added for editing
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(value);
 
-
-
   //ITEM DELETE LOGIC
   const deleteRow = (e) => {
     // alert(indexNo)
-    e.stopPropagation(); // Prevents completing the task when clicking delete
+    e.stopPropagation(); 
     const finalData = todoList.filter((u, i) => i != indexNo)
     setTodoList(finalData)
   }
@@ -88,11 +71,9 @@ function ToDoListItems({ value, indexNo, todoList, setTodoList }) {
     // console.log("ram")
   }
 
-
-
   // EDIT LOGIC  ***new added for editing***
   const handleEdit = (e) => {
-    e.stopPropagation(); // Prevents completing the task when clicking edit
+    e.stopPropagation(); 
     setIsEditing(true);
   };
   // SAVE LOGIC  
@@ -115,6 +96,23 @@ function ToDoListItems({ value, indexNo, todoList, setTodoList }) {
     setIsEditing(false);
   };
 
+return (
+    <li onClick={completeTask} className={status ? "complete-task" : ""}>
+      {indexNo + 1}.{" "}
+
+      {/* add ternary op OR conditional rendering  */}
+      {isEditing ?
+        (<input type="text" className="edit-input" value={editText} onClick={(e) => e.stopPropagation()} // Prevents toggling completion status while typing
+          onChange={(e) => setEditText(e.target.value)}
+        />)
+        : (value)}
+      {isEditing ? (<span className="edit-btn" onClick={handleSave}>Save</span>) : (<span className="edit-btn" onClick={handleEdit}>Edit</span>)}
+      <span className="delete-btn" onClick={deleteRow}>&times;</span>
+    </li>
+  );
+}
+
+
 
 
 
@@ -129,23 +127,3 @@ function ToDoListItems({ value, indexNo, todoList, setTodoList }) {
   // }
 
 
-  return (
-    <li onClick={completeTask} className={status ? "complete-task" : ""}>
-      {indexNo + 1}.{" "}
-
-      {/* add ternary op OR conditional rendering  */}
-      {isEditing ? 
-      (<input type="text" className="edit-input" value={editText} onClick={(e) => e.stopPropagation()} // Prevents toggling completion status while typing
-        onChange={(e) => setEditText(e.target.value)}
-      />) 
-      : (value)}    
-
-
-
-      {isEditing ? (<span className="edit-btn" onClick={handleSave}>Save</span>) : (<span className="edit-btn" onClick={handleEdit}>Edit</span>)}
-
-
-      <span className="delete-btn" onClick={deleteRow}>&times;</span>
-    </li>
-  );
-}

@@ -3,8 +3,6 @@ import img from './assets/moon.jpg'
 import img1 from './assets/star.jpg'
 
 function App() {
-
-
   return (
     <>
       <div>

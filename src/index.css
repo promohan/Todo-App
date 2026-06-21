@@ -6,7 +6,6 @@
   --gray-color: #ffffffa1;
   --black-color: #0a0a0a;
 }
-
 body {
   height: 100vh;
   background-color: #0a0a0a;
@@ -18,12 +17,7 @@ body {
   background-size: cover;
   background-position: 0px -120px;
   background-repeat: no-repeat;
-
-
-
 }
-
-
 .App {
   text-align: center;
   background-color: var(--primary-color);
