@@ -1,16 +1,48 @@
-# React + Vite
+📝 Developer Tasks - React Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive Todo Application built with React.js that helps users manage daily tasks efficiently. The app includes task creation, editing, updating, saving, and deletion features while preventing duplicate entries.
 
-Currently, two official plugins are available:
+🚀 Live Demo : https://promohan.github.io/Todo-App/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+✨ Features
+➕ Add New Tasks
+✏️ Edit Existing Tasks
+💾 Save Updated Tasks
+❌ Delete Tasks
+🚫 Duplicate Task Prevention
+📱 Fully Responsive Design
+⚡ Fast and Smooth User Experience
+🎨 Attractive UI with Custom Background
 
-## React Compiler
+🛠️ Built With 
+React.js
+JavaScript (ES6+)
+HTML5
+CSS3
+React Hooks (useState)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+🎯 Functionality
+Add Tasks
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Users can create and manage new tasks easily.
+
+Edit & Update Tasks
+
+Existing tasks can be edited and updated without deleting them.
+
+Delete Tasks
+
+Remove completed or unwanted tasks instantly.
+
+Duplicate Protection
+
+The application prevents users from adding the same task multiple times.
+
+
+👨‍💻 Author
+
+Mohan
+
+GitHub: https://github.com/promohan
+LinkedIn: https://linkedin.com/in/mohan2005
